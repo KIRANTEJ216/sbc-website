@@ -23,12 +23,12 @@ export default function AdvisoryBoard() {
         <GsapReveal>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-surface/50 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="text-text-muted text-xs uppercase tracking-widest font-medium">Leadership</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="text-text-muted text-xs uppercase tracking-widest font-medium">Advisory</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">
               Our{" "}
-              <span className="gradient-gold">Advisory Board</span>
+              <span className="gradient-text">Advisory Board</span>
             </h2>
             <p className="text-text-secondary text-lg max-w-xl mx-auto">
               Seasoned leaders guiding our community's vision and growth
@@ -40,7 +40,7 @@ export default function AdvisoryBoard() {
           {boardMembers.map((m) => (
             <div
               key={m.name}
-               className="group glass rounded-[1.25rem] p-4 sm:p-6 border border-border/60 text-center transition-all duration-500 hover:shadow-card-glow hover:border-accent/25 hover:-translate-y-1"
+               className="group glass rounded-[1.25rem] p-4 sm:p-6 border border-border/60 text-center card-hover-glow transition-all duration-500"
             >
               <div className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden border-2 border-border/80 group-hover:border-accent/40 transition-all duration-500">
                 <img
@@ -50,9 +50,21 @@ export default function AdvisoryBoard() {
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <h3 className="text-[13px] sm:text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500">
+              <h3 className="text-[13px] sm:text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500 leading-tight">
                 {m.name}
               </h3>
+              <div className="flex items-center justify-center gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
+                  <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 5.694v.632A2.5 2.5 0 0117.5 8.5h-.5a1 1 0 01-1-1V4.5a1 1 0 011-1h.5A2.5 2.5 0 0120 5.694zM4 5.694v.632A2.5 2.5 0 006.5 8.5h.5a1 1 0 001-1V4.5a1 1 0 00-1-1h-.5A2.5 2.5 0 004 5.694z" />
+                  </svg>
+                </div>
+                <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
+                  <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           ))}
         </GsapReveal>
