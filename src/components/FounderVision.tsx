@@ -17,6 +17,7 @@ export default function FounderVision() {
                   <img
                     src="/images/founder.svg"
                     alt="Shri. ILLA SOMA SEKHAR"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -66,6 +67,7 @@ export default function FounderVision() {
                   <img
                     src="/images/founder-thumb.svg"
                     alt="Shri. ILLA SOMA SEKHAR"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -1,5 +1,0 @@
-[    2745ms] [LOG] [Web Vitals] TTFB: 228.59999999403954 (good) @ https://app.sbconnect.in/assets/index-DszndilO.js:102
-[    5794ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://app.sbconnect.in/login:0
-[    6025ms] [LOG] [Web Vitals] FCP: 5912 (poor) @ https://app.sbconnect.in/assets/index-DszndilO.js:102
-[   49439ms] [LOG] [Web Vitals] LCP: 5912 (poor) @ https://app.sbconnect.in/assets/index-DszndilO.js:102
-[   49585ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBCPjtxrKXxm6i7vKHs3n1iFeU-ykmN-I8:0

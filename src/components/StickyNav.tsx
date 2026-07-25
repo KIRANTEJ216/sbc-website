@@ -23,6 +23,7 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
   const [activeId, setActiveId] = useState(tabIds[0]);
   const [isSticky, setIsSticky] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
+  const [logoProgress, setLogoProgress] = useState(0);
 
   // Update indicator position based on active tab
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
 
       const heroBottom = hero.offsetTop + hero.offsetHeight - TAB_HEIGHT;
       setIsSticky(window.scrollY >= heroBottom);
+      setLogoProgress(Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight - TAB_HEIGHT))));
 
       let current = tabIds[0];
       for (const id of tabIds) {
@@ -81,11 +83,13 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
 
   return (
     <div ref={containerRef}>
-      <section ref={heroRef} className="flex flex-col items-center justify-center min-h-screen relative text-center overflow-hidden" style={{ background: "linear-gradient(160deg, #FAF8F5 0%, #F5F1EC 35%, #EDE8E1 65%, #E8E2D8 100%)" }}>
+      <section ref={heroRef} aria-label="Hero" className="flex flex-col items-center justify-center min-h-screen relative text-center overflow-hidden" style={{ background: "linear-gradient(160deg, #FAF8F5 0%, #F5F1EC 35%, #EDE8E1 65%, #E8E2D8 100%)" }}>
         <ConnectingDots />
         <div className="flex-1 flex flex-col items-center justify-center w-full px-4 sm:px-8">
           <div className="max-w-3xl w-full px-2 sm:px-0">
-            <Logo className="w-14 sm:w-20 lg:w-24 mx-auto mb-4 sm:mb-6" />
+            <div style={{ transform: `scale(${1 - logoProgress})`, opacity: 1 - logoProgress }}>
+              <Logo className="w-28 sm:w-36 lg:w-48 mx-auto mb-4 sm:mb-6" />
+            </div>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border/60 bg-white/60 backdrop-blur-sm mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent" />

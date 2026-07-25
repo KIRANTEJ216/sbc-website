@@ -49,7 +49,7 @@ export default function Gallery() {
   const total = slides.length;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#1E3A63]">
+    <div className="relative w-full h-screen overflow-hidden bg-[#1E3A63]" role="region" aria-roledescription="carousel" aria-label="Gallery">
       {slides.map((slide, i) => {
         const isActive = i === active;
         const isLeaving = i === leaving;
@@ -103,6 +103,7 @@ export default function Gallery() {
               <img
                 src={`/images/gallery/${slide.seed}.svg`}
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div
@@ -126,6 +127,7 @@ export default function Gallery() {
               <img
                 src={`/images/gallery/${slide.seed}.svg`}
                 alt={slide.label}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
