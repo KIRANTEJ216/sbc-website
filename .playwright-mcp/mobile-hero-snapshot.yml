@@ -1,0 +1,20 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - generic [ref=f6e4]:
+        - generic [ref=f6e5]
+        - tablist [ref=f6e19]
+      - main [ref=f6e26]:
+        - generic [ref=f6e32]
+        - generic [ref=f6e64]
+        - generic [ref=f6e174]
+        - generic [ref=f6e280]
+        - generic [ref=f6e297]
+        - generic [ref=f6e340]
+    - contentinfo [ref=f6e368]:
+      - generic [ref=f6e373]:
+        - generic [ref=f6e374]
+        - paragraph [ref=f6e388]: © 2026 SB Connect. All rights reserved.
+        - paragraph [ref=f6e389]: Developed by FloLogixAutomations
+  - button "Open Next.js Dev Tools" [ref=f6e395] [cursor=pointer]
+  - alert [ref=f6e399]

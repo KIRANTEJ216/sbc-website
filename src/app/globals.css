@@ -51,6 +51,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -60,6 +61,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-manipulation {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  /* Prevent iOS zoom on form inputs */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 ::selection {

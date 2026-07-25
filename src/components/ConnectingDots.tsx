@@ -127,21 +127,18 @@ export default function ConnectingDots() {
 
           if (dist < maxDist) {
             const alpha = 1 - dist / maxDist;
-            let lineWidth = 0.4;
-            let opacity = 0.12;
+            let lineWidth = 0.3;
+            let opacity = 0.06;
 
             if (bothHubs) {
-              // Hub-to-hub: thick, visible, pulsing
-              lineWidth = 1.2 + 0.4 * Math.sin(time * 0.5 + p.pulsePhase + q.pulsePhase);
-              opacity = 0.2 + 0.08 * Math.sin(time * 0.8 + p.pulsePhase);
+              lineWidth = 0.8 + 0.3 * Math.sin(time * 0.5 + p.pulsePhase + q.pulsePhase);
+              opacity = 0.1 + 0.05 * Math.sin(time * 0.8 + p.pulsePhase);
             } else if (p.isHub || q.isHub) {
-              // Hub-to-satellite: medium
-              lineWidth = 0.7;
-              opacity = 0.15 * alpha;
+              lineWidth = 0.5;
+              opacity = 0.08 * alpha;
             } else {
-              // Satellite-to-satellite: thin
-              lineWidth = 0.3;
-              opacity = 0.07 * alpha;
+              lineWidth = 0.2;
+              opacity = 0.04 * alpha;
             }
 
             ctx.beginPath();
@@ -164,8 +161,8 @@ export default function ConnectingDots() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouseX, mouseY);
-            ctx.strokeStyle = `rgba(40, 72, 122, ${0.06 * alpha})`;
-            ctx.lineWidth = p.isHub ? 1.0 : 0.5;
+            ctx.strokeStyle = `rgba(40, 72, 122, ${0.03 * alpha})`;
+            ctx.lineWidth = p.isHub ? 0.7 : 0.3;
             ctx.stroke();
           }
         }
@@ -180,37 +177,35 @@ export default function ConnectingDots() {
 
           // Outer glow
           ctx.save();
-          ctx.shadowColor = "rgba(40, 72, 122, 0.3)";
-          ctx.shadowBlur = 20 * pulse;
+          ctx.shadowColor = "rgba(40, 72, 122, 0.15)";
+          ctx.shadowBlur = 12 * pulse;
           ctx.beginPath();
           ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(40, 72, 122, ${0.06 * pulse})`;
+          ctx.fillStyle = `rgba(40, 72, 122, ${0.03 * pulse})`;
           ctx.fill();
           ctx.restore();
 
-          // Inner glow ring
           ctx.save();
-          ctx.shadowColor = "rgba(40, 72, 122, 0.4)";
-          ctx.shadowBlur = 15;
+          ctx.shadowColor = "rgba(40, 72, 122, 0.2)";
+          ctx.shadowBlur = 8;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(40, 72, 122, ${0.3 + 0.2 * pulse})`;
+          ctx.fillStyle = `rgba(40, 72, 122, ${0.2 + 0.1 * pulse})`;
           ctx.fill();
           ctx.restore();
 
-          // Bright core
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r * 0.5, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(40, 72, 122, 0.6)";
+          ctx.fillStyle = "rgba(40, 72, 122, 0.35)";
           ctx.fill();
         } else {
           // Satellite nodes: simple dots
           ctx.save();
-          ctx.shadowColor = "rgba(40, 72, 122, 0.25)";
-          ctx.shadowBlur = 6;
+          ctx.shadowColor = "rgba(40, 72, 122, 0.12)";
+          ctx.shadowBlur = 3;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(40, 72, 122, 0.3)";
+          ctx.fillStyle = "rgba(40, 72, 122, 0.15)";
           ctx.fill();
           ctx.restore();
         }

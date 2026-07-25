@@ -32,11 +32,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "SB Connect - Community Business Platform",
-  description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+, and grow your professional network with SB Connect.",
+  description: "Together We Grow in Business. Only Business No Politics. Join 127+ verified businesses, close deals worth 4.2Cr+, and grow your professional network with SB Connect.",
   robots: { index: true, follow: true },
   openGraph: {
     title: "SB Connect - Community Business Platform",
-    description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+.",
+    description: "Together We Grow in Business. Only Business No Politics. Join 127+ verified businesses, close deals worth 4.2Cr+.",
     type: "website",
     siteName: "SB Connect",
     locale: "en_IN",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SB Connect - Community Business Platform",
-    description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+.",
+    description: "Together We Grow in Business. Only Business No Politics. Join 127+ verified businesses, close deals worth 4.2Cr+.",
   },
 };
 
@@ -61,9 +61,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="antialiased">
-        <CursorGlow />
-        {children}
+      <body className="antialiased overflow-x-hidden">
+        <div className="relative min-h-screen overflow-x-hidden">
+          <CursorGlow />
+          {children}
+        </div>
       </body>
     </html>
   );

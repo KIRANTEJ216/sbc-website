@@ -15,7 +15,7 @@ const teamMembers = [
 
 export default function DigitalTeam() {
   return (
-    <section className="relative py-28 sm:py-36 px-4 border-b border-border/50">
+    <section className="relative py-28 sm:py-36 px-4 border-b border-border/50 overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-[120px]" />
 
@@ -40,19 +40,19 @@ export default function DigitalTeam() {
           {teamMembers.map((m) => (
             <div
               key={m.name}
-              className="group glass rounded-[1.25rem] p-6 border border-border/60 text-center card-hover-glow transition-all duration-500"
+               className="group glass rounded-[1.25rem] p-4 sm:p-6 border border-border/60 text-center card-hover-glow transition-all duration-500"
             >
-              <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-2 border-border/80 group-hover:border-accent/40 transition-all duration-500">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-3 sm:mb-4 rounded-full overflow-hidden border-2 border-border/80 group-hover:border-accent/40 transition-all duration-500">
                 <img
-                  src={`https://picsum.photos/seed/${m.seed}/200/200`}
+                  src={`/images/${m.seed}.svg`}
                   alt={m.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <h3 className="text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500">
+              <h3 className="text-[13px] sm:text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500">
                 {m.name}
               </h3>
-              <p className="text-text-muted text-xs mt-1">{m.role}</p>
+              <p className="text-text-muted text-[11px] sm:text-xs mt-1">{m.role}</p>
               <div className="flex items-center justify-center gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
                   <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 24 24">

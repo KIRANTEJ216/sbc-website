@@ -1,0 +1,114 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e11]: Community Business Platform
+        - heading "SB CONNECT" [level=1] [ref=e14]
+        - paragraph [ref=e15]: No Politics Only Business
+        - paragraph [ref=e16]: Empowering verified businesses to connect, collaborate, and grow together
+      - tablist [ref=e17]:
+        - tab "FOUNDER" [selected] [ref=e18] [cursor=pointer]
+        - tab "ABOUT" [ref=e19] [cursor=pointer]
+        - tab "TEAM" [ref=e20] [cursor=pointer]
+        - tab "GALLERY" [ref=e21] [cursor=pointer]
+        - tab "BOARD" [ref=e22] [cursor=pointer]
+        - tab "LOGIN" [ref=e23] [cursor=pointer]
+    - main [ref=e25]:
+      - generic [ref=e31]:
+        - img "Shri. ILLA SOMA SEKHAR" [ref=e36]
+        - generic [ref=e40]:
+          - generic [ref=e41]: Founder & Vision
+          - heading "Shri. ILLA SOMA SEKHAR" [level=2] [ref=e44]
+          - generic [ref=e45]
+          - generic [ref=e50]
+          - generic [ref=e55]
+      - generic [ref=e63]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: About SB Connect
+          - heading "No Politics. Only Business." [level=1] [ref=e70]
+          - paragraph [ref=e71]: SB Connect is a private community of verified business professionals committed to mutual growth through authentic connections, collaboration, and shared opportunities.
+        - generic [ref=e73]:
+          - heading "Our Journey" [level=2] [ref=e75]
+          - generic [ref=e77]
+        - generic [ref=e128]:
+          - heading "By the Numbers" [level=2] [ref=e130]
+          - generic [ref=e131]
+        - generic [ref=e150]:
+          - heading "What We Stand For" [level=2] [ref=e151]
+          - paragraph [ref=e152]: A community built on integrity, mutual growth, and authentic engagement. Every member is vetted. Every connection counts. Every deal is a win-win.
+          - generic [ref=e153]
+      - generic [ref=e173]:
+        - generic [ref=e175]:
+          - generic [ref=e176]: Leadership
+          - heading "Core Committee" [level=2] [ref=e179]
+          - paragraph [ref=e180]: The governing body driving SB Connect forward
+        - generic [ref=e181]:
+          - generic [ref=e182]
+          - generic [ref=e194]
+          - generic [ref=e206]
+          - generic [ref=e218]
+          - generic [ref=e230]
+          - generic [ref=e242]
+          - generic [ref=e254]
+          - generic [ref=e266]
+      - generic [ref=e279]:
+        - generic [ref=e283]:
+          - img "Inauguration Ceremony" [ref=e284]
+          - generic [ref=e285]
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic:
+          - generic
+        - generic [ref=e290]:
+          - generic [ref=e291]: 01 / 09
+          - button "Next gallery image" [ref=e292] [cursor=pointer]: NEXT
+      - generic [ref=e297]:
+        - generic [ref=e299]:
+          - generic [ref=e300]: Leadership
+          - heading "Our Advisory Board" [level=2] [ref=e303]
+          - paragraph [ref=e304]: Seasoned leaders guiding our community's vision and growth
+        - generic [ref=e305]:
+          - generic [ref=e306]
+          - generic [ref=e310]
+          - generic [ref=e314]
+          - generic [ref=e318]
+          - generic [ref=e322]
+          - generic [ref=e326]
+          - generic [ref=e330]
+          - generic [ref=e334]
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - generic [ref=e342]: Member Portal
+          - heading "Welcome Back" [level=2] [ref=e345]
+          - paragraph [ref=e346]: Sign in to access exclusive member resources and network
+        - generic [ref=e347]:
+          - generic [ref=e349]
+          - generic [ref=e352]
+          - generic [ref=e360]
+          - button "Sign In" [ref=e365]
+          - paragraph [ref=e366]
+  - contentinfo [ref=e368]:
+    - generic [ref=e373]:
+      - generic [ref=e374]:
+        - generic [ref=e375]: Visitors
+        - generic [ref=e376]: "0"
+        - generic [ref=e378]: "0"
+        - generic [ref=e380]: "0"
+        - generic [ref=e382]: "0"
+        - generic [ref=e384]: "0"
+        - generic [ref=e386]: "0"
+      - paragraph [ref=e388]: © 2026 SB Connect. All rights reserved.
+      - paragraph [ref=e389]: Developed by FloLogixAutomations
+  - button "Open Next.js Dev Tools" [ref=e395] [cursor=pointer]

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 const slides = [
   { seed: "oct22-1", label: "Inauguration Ceremony", desc: "The beginning of SB Connect's journey with 60 founding members" },
@@ -18,16 +18,33 @@ export default function Gallery() {
   const [active, setActive] = useState(0);
   const [hacked, setHacked] = useState(false);
   const [leaving, setLeaving] = useState<number | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const activeRef = useRef(active);
+  activeRef.current = active;
+
+  const goNext = useCallback(() => {
+    setLeaving(activeRef.current);
+    setActive((prev) => (prev + 1) % slides.length);
+    setTimeout(() => setLeaving(null), 950);
+  }, []);
+
+  const resetTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(goNext, 3000);
+  }, [goNext]);
 
   useEffect(() => {
     setTimeout(() => setHacked(true), 1000);
-  }, []);
+    resetTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [resetTimer]);
 
-  const goNext = useCallback(() => {
-    setLeaving(active);
-    setActive((prev) => (prev + 1) % slides.length);
-    setTimeout(() => setLeaving(null), 950);
-  }, [active]);
+  const handleNext = useCallback(() => {
+    goNext();
+    resetTimer();
+  }, [goNext, resetTimer]);
 
   const total = slides.length;
 
@@ -84,7 +101,7 @@ export default function Gallery() {
           >
             <div className="absolute inset-0 overflow-hidden">
               <img
-                src={`https://picsum.photos/seed/${slide.seed}/1600/900`}
+                src={`/images/gallery/${slide.seed}.svg`}
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -99,7 +116,7 @@ export default function Gallery() {
             </div>
 
             <div
-              className="absolute inset-[8%] sm:inset-[12%] md:inset-[15%] rounded-2xl overflow-hidden shadow-2xl transition-all duration-[0.45s] ease-in-out"
+              className="absolute inset-[5%] sm:inset-[12%] md:inset-[15%] rounded-2xl overflow-hidden shadow-2xl transition-all duration-[0.45s] ease-in-out"
               style={{
                 transform: isActive ? "scale(0.82)" : "scale(0.75)",
                 opacity: isActive ? 1 : 0,
@@ -107,31 +124,31 @@ export default function Gallery() {
               }}
             >
               <img
-                src={`https://picsum.photos/seed/${slide.seed}/800/600`}
+                src={`/images/gallery/${slide.seed}.svg`}
                 alt={slide.label}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                <span className="inline-flex items-center gap-2 text-accent/70 text-xs tracking-widest uppercase font-heading mb-2">
-                  <span className="w-6 h-px bg-accent/50" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                <span className="inline-flex items-center gap-1.5 text-accent/70 text-[10px] sm:text-xs tracking-widest uppercase font-heading mb-1 sm:mb-2">
+                  <span className="w-4 sm:w-6 h-px bg-accent/50" />
                   {String(i + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                 </span>
-                <h3 className="text-white text-xl sm:text-3xl font-heading font-bold">{slide.label}</h3>
-                <p className="text-white/60 text-sm sm:text-base mt-1 sm:mt-2 max-w-lg">{slide.desc}</p>
+                <h3 className="text-white text-sm sm:text-3xl font-heading font-bold">{slide.label}</h3>
+                <p className="text-white/60 text-[11px] sm:text-base mt-0.5 sm:mt-2 max-w-lg line-clamp-2">{slide.desc}</p>
               </div>
             </div>
           </div>
         );
       })}
 
-      <div className="absolute bottom-8 right-8 z-30 flex items-center gap-4">
-        <span className="text-white/50 text-sm font-heading tracking-wider">
+      <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 z-30 flex items-center gap-3 sm:gap-4">
+        <span className="text-white/50 text-[11px] sm:text-sm font-heading tracking-wider hidden sm:inline">
           {String(active + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
         <button
-          onClick={goNext}
+          onClick={handleNext}
           aria-label="Next gallery image"
-          className="px-8 py-3 backdrop-blur-md rounded-full font-heading tracking-widest text-xs border transition-all duration-500 cursor-pointer bg-accent/10 border-accent/30 text-accent hover:bg-accent hover:text-white"
+          className="px-5 sm:px-8 py-2.5 sm:py-3 backdrop-blur-md rounded-full font-heading tracking-widest text-[10px] sm:text-xs border transition-all duration-500 cursor-pointer bg-accent/10 border-accent/30 text-accent hover:bg-accent hover:text-white touch-manipulation"
         >
           NEXT
         </button>
