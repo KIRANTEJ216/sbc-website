@@ -32,7 +32,7 @@ export default function Gallery() {
   const total = slides.length;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#7A6B5A]">
+    <div className="relative w-full h-screen overflow-hidden bg-[#1E3A63]">
       {slides.map((slide, i) => {
         const isActive = i === active;
         const isLeaving = i === leaving;

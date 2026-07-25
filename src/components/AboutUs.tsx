@@ -57,7 +57,7 @@ export default function AboutUs() {
                             ? "bg-accent/60"
                             : i < 15
                             ? "bg-accent"
-                            : "bg-accent shadow-[0_0_10px_rgba(196,151,90,0.5)]"
+                            : "bg-accent shadow-[0_0_10px_rgba(40,72,122,0.5)]"
                           }`}
                       />
                       {(i === 0 || i === 6 || i === 11 || i === 15) && (
