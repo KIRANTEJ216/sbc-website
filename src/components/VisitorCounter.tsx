@@ -16,7 +16,7 @@ export default function VisitorCounter() {
   const digits = String(count).padStart(6, "0").split("");
 
   return (
-    <footer className="relative w-full bg-[#0a0f1e] overflow-hidden">
+    <footer className="relative w-full bg-[#0a0f1e] overflow-hidden border-t border-accent/20">
       <div className="stars" />
       <div className="twinkling" />
       <div className="clouds" />

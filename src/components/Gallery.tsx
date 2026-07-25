@@ -32,7 +32,7 @@ export default function Gallery() {
   const total = slides.length;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#94a3b8]">
+    <div className="relative w-full h-screen overflow-hidden bg-[#7A6B5A]">
       {slides.map((slide, i) => {
         const isActive = i === active;
         const isLeaving = i === leaving;
@@ -112,8 +112,8 @@ export default function Gallery() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                <span className="inline-flex items-center gap-2 text-white/60 text-xs tracking-widest uppercase font-heading mb-2">
-                  <span className="w-6 h-px bg-white/40" />
+                <span className="inline-flex items-center gap-2 text-accent/70 text-xs tracking-widest uppercase font-heading mb-2">
+                  <span className="w-6 h-px bg-accent/50" />
                   {String(i + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                 </span>
                 <h3 className="text-white text-xl sm:text-3xl font-heading font-bold">{slide.label}</h3>
@@ -131,7 +131,7 @@ export default function Gallery() {
         <button
           onClick={goNext}
           aria-label="Next gallery image"
-          className="px-8 py-3 bg-white/15 backdrop-blur-md rounded-full text-white font-heading tracking-widest text-xs border border-white/25 hover:bg-white/25 transition-all cursor-pointer"
+          className="px-8 py-3 backdrop-blur-md rounded-full font-heading tracking-widest text-xs border transition-all duration-500 cursor-pointer bg-accent/10 border-accent/30 text-accent hover:bg-accent hover:text-white"
         >
           NEXT
         </button>

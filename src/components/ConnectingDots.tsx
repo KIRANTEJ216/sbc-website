@@ -67,11 +67,11 @@ export default function ConnectingDots() {
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
         ctx.save();
-        ctx.shadowColor = "rgba(59, 130, 246, 0.5)";
-        ctx.shadowBlur = 8;
+        ctx.shadowColor = "rgba(196, 151, 90, 0.4)";
+        ctx.shadowBlur = 10;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(59, 130, 246, 0.35)";
+        ctx.fillStyle = "rgba(196, 151, 90, 0.35)";
         ctx.fill();
         ctx.restore();
 
@@ -82,7 +82,7 @@ export default function ConnectingDots() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouseX, mouseY);
-          ctx.strokeStyle = `rgba(59, 130, 246, ${0.04 * (1 - dist / (connectionDist * 1.5))})`;
+          ctx.strokeStyle = `rgba(196, 151, 90, ${0.04 * (1 - dist / (connectionDist * 1.5))})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -97,7 +97,7 @@ export default function ConnectingDots() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.06 * (1 - dist / connectionDist)})`;
+            ctx.strokeStyle = `rgba(196, 151, 90, ${0.07 * (1 - dist / connectionDist)})`;
             ctx.lineWidth = 0.3;
             ctx.stroke();
           }

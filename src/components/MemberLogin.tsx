@@ -23,7 +23,8 @@ export default function MemberLogin() {
           </p>
         </div>
 
-        <form action="https://app.sbconnect.in" method="POST" className="glass rounded-2xl p-5 sm:p-8 border border-border/60 space-y-5">
+        <form action="https://app.sbconnect.in" method="POST" className="relative glass rounded-[1.75rem] p-5 sm:p-8 border border-border/60 space-y-5 overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent/40 via-accent to-accent/40" />
           <div>
             <label className="block text-xs font-heading font-semibold text-text-primary mb-1.5 tracking-wider">
               Email Address
@@ -82,7 +83,7 @@ export default function MemberLogin() {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-accent text-white text-sm font-heading font-semibold tracking-wider hover:bg-accent-hover transition-all shadow-lg shadow-accent/20"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-accent to-accent-hover text-white text-sm font-heading font-semibold tracking-wider hover:brightness-110 transition-all shadow-lg shadow-accent/20"
           >
             Sign In
           </button>

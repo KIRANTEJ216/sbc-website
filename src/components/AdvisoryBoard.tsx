@@ -36,7 +36,7 @@ export default function AdvisoryBoard() {
           </div>
         </GsapReveal>
 
-        <GsapReveal stagger={0.07} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <GsapReveal stagger={0.1} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10">
           {boardMembers.map((m) => (
             <div
               key={m.name}
@@ -46,10 +46,10 @@ export default function AdvisoryBoard() {
                 <img
                   src={`https://picsum.photos/seed/${m.seed}/200/200`}
                   alt={m.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <h3 className="text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500">
                 {m.name}
               </h3>
             </div>

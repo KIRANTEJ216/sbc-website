@@ -59,7 +59,7 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
 
   return (
     <div ref={containerRef}>
-      <section className="flex flex-col items-center justify-center h-screen relative text-center px-4 sm:px-8 overflow-hidden" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%)" }}>
+      <section className="flex flex-col items-center justify-center h-screen relative text-center px-4 sm:px-8 overflow-hidden" style={{ background: "linear-gradient(160deg, #FAF8F5 0%, #F5F1EC 35%, #EDE8E1 65%, #E8E2D8 100%)" }}>
         <ConnectingDots />
         <div className="max-w-3xl relative z-[2]">
           <Logo className="w-16 sm:w-20 lg:w-24 mx-auto mb-5 sm:mb-6" />
@@ -73,7 +73,7 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
             SB CONNECT
           </h1>
 
-          <p className="text-lg sm:text-xl text-text-secondary font-heading tracking-wider mb-2">
+          <p className="text-lg sm:text-xl lg:text-2xl font-display italic text-accent tracking-wide mb-2">
             No Politics Only Business
           </p>
 
@@ -82,9 +82,9 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
           </p>
         </div>
 
-        <div
+          <div
           role="tablist"
-          className="flex w-full bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-10 overflow-x-auto scrollbar-hide"
+          className="flex w-full bg-white/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.06)] z-10 overflow-x-auto scrollbar-hide"
           style={{
             position: isSticky ? "fixed" : "absolute",
             top: isSticky ? 0 : "auto",
@@ -99,17 +99,17 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
               role="tab"
               aria-selected={activeIndex === i}
               onClick={() => scrollTo(tabIds[i])}
-              className={`flex-1 shrink-0 flex items-center justify-center text-xs sm:text-sm font-heading font-semibold tracking-widest transition-all duration-500 cursor-pointer whitespace-nowrap px-3 sm:px-4 ${
+              className={`flex-1 shrink-0 flex items-center justify-center text-xs sm:text-sm font-heading font-semibold tracking-[0.18em] transition-all duration-700 cursor-pointer whitespace-nowrap px-3 sm:px-4 ${
                 activeIndex === i
-                  ? "text-accent bg-accent/5"
-                  : "text-text-secondary hover:bg-accent hover:text-white"
+                  ? "text-accent"
+                  : "text-text-secondary hover:text-accent-hover"
               }`}
             >
               {label}
             </button>
           ))}
           <span
-            className="absolute bottom-0 h-[6px] bg-accent transition-all duration-300 ease-out"
+            className="absolute bottom-0 h-[3px] bg-gradient-to-r from-accent/80 to-accent transition-all duration-500 ease-out rounded-t-sm"
             style={{
               width: `${100 / tabLabels.length}%`,
               left: `${(activeIndex / tabLabels.length) * 100}%`,

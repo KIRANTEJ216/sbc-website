@@ -36,7 +36,7 @@ export default function DigitalTeam() {
           </div>
         </GsapReveal>
 
-        <GsapReveal stagger={0.07} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <GsapReveal stagger={0.1} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10">
           {teamMembers.map((m) => (
             <div
               key={m.name}
@@ -46,20 +46,20 @@ export default function DigitalTeam() {
                 <img
                   src={`https://picsum.photos/seed/${m.seed}/200/200`}
                   alt={m.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <h3 className="text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-base font-heading font-semibold text-text-primary group-hover:text-accent transition-colors duration-500">
                 {m.name}
               </h3>
               <p className="text-text-muted text-xs mt-1">{m.role}</p>
-              <div className="flex items-center justify-center gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
+              <div className="flex items-center justify-center gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
                   <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 5.694v.632A2.5 2.5 0 0117.5 8.5h-.5a1 1 0 01-1-1V4.5a1 1 0 011-1h.5A2.5 2.5 0 0120 5.694zM4 5.694v.632A2.5 2.5 0 006.5 8.5h.5a1 1 0 001-1V4.5a1 1 0 00-1-1h-.5A2.5 2.5 0 004 5.694z" />
                   </svg>
                 </div>
-                <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
+                <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center cursor-pointer hover:bg-accent/20 transition-colors">
                   <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" />
                   </svg>

@@ -9,8 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 interface GsapRevealProps {
   children: ReactNode;
   className?: string;
-  variant?: "default" | "left" | "right" | "scale";
+  variant?: "default" | "left" | "right" | "scale" | "zoom" | "stagger-up";
   stagger?: number;
+  duration?: number;
+  delay?: number;
 }
 
 const setVars: Record<string, gsap.TweenVars> = {
@@ -18,6 +20,8 @@ const setVars: Record<string, gsap.TweenVars> = {
   left: { opacity: 0, x: -48 },
   right: { opacity: 0, x: 48 },
   scale: { opacity: 0, scale: 0.92 },
+  zoom: { opacity: 0, scale: 0.8, y: 20 },
+  "stagger-up": { opacity: 0, y: 60, scale: 0.98 },
 };
 
 const toVars: Record<string, gsap.TweenVars> = {
@@ -25,9 +29,18 @@ const toVars: Record<string, gsap.TweenVars> = {
   left: { opacity: 1, x: 0 },
   right: { opacity: 1, x: 0 },
   scale: { opacity: 1, scale: 1 },
+  zoom: { opacity: 1, scale: 1, y: 0 },
+  "stagger-up": { opacity: 1, y: 0, scale: 1 },
 };
 
-export default function GsapReveal({ children, className = "", variant = "default", stagger = 0 }: GsapRevealProps) {
+export default function GsapReveal({
+  children,
+  className = "",
+  variant = "default",
+  stagger = 0,
+  duration = 0.9,
+  delay = 0,
+}: GsapRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,19 +53,20 @@ export default function GsapReveal({ children, className = "", variant = "defaul
       gsap.set(targets, setVars[variant]);
       gsap.to(targets, {
         ...toVars[variant],
-        duration: 0.9,
+        duration,
+        delay,
         ease: "power3.out",
         stagger: stagger || undefined,
         scrollTrigger: {
           trigger: el,
           start: "top 88%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       });
     });
 
     return () => ctx.revert();
-  }, [variant, stagger]);
+  }, [variant, stagger, duration, delay]);
 
   return (
     <div ref={ref} className={className}>
