@@ -26,11 +26,18 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "SB Connect - Community Business Platform",
   description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+, and grow your professional network with SB Connect.",
+  robots: { index: true, follow: true },
   openGraph: {
     title: "SB Connect - Community Business Platform",
     description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+.",
     type: "website",
     siteName: "SB Connect",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SB Connect - Community Business Platform",
+    description: "No Politics Only Business. Join 127+ verified businesses, close deals worth 4.2Cr+.",
   },
 };
 
@@ -44,6 +51,9 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body className="antialiased">
         <CursorGlow />
         {children}

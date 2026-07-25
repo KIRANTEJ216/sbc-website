@@ -1,17 +1,16 @@
 "use client";
 
-import ScrollReveal from "@/components/ScrollReveal";
-import StaggerReveal from "@/components/StaggerReveal";
+import GsapReveal from "@/components/GsapReveal";
 
 const boardMembers = [
-  { name: "Govvala Soma Sekhar", seed: "adv-1" },
-  { name: "Kadali Trinadha Rao", seed: "adv-2" },
-  { name: "Vittanala Srinivas Kumar", seed: "adv-3" },
-  { name: "Appari Ravindranath", seed: "adv-4" },
-  { name: "Illa Vinod Kumar", seed: "adv-5" },
-  { name: "Chintakula Ravi Prasad", seed: "adv-6" },
-  { name: "Illa Srinivasa", seed: "adv-7" },
-  { name: "Katta L.B. Kumar", seed: "adv-8" },
+  { name: "GOVVALA SOMA SEKHAR", seed: "adv-1" },
+  { name: "KADALI TRINADHA RAO", seed: "adv-2" },
+  { name: "VITTANALA SRINIVAS KUMAR", seed: "adv-3" },
+  { name: "APPARI RAVINDRANATH", seed: "adv-4" },
+  { name: "ILLA VINOD KUMAR", seed: "adv-5" },
+  { name: "CHINTAKULA RAVI PRASAD", seed: "adv-6" },
+  { name: "ILLA SRINIVASA", seed: "adv-7" },
+  { name: "KATTA L.B. KUMAR", seed: "adv-8" },
 ];
 
 export default function AdvisoryBoard() {
@@ -21,7 +20,7 @@ export default function AdvisoryBoard() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <ScrollReveal>
+        <GsapReveal>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-surface/50 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-gold" />
@@ -35,9 +34,9 @@ export default function AdvisoryBoard() {
               Seasoned leaders guiding our community's vision and growth
             </p>
           </div>
-        </ScrollReveal>
+        </GsapReveal>
 
-        <StaggerReveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <GsapReveal stagger={0.07} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {boardMembers.map((m) => (
             <div
               key={m.name}
@@ -55,7 +54,7 @@ export default function AdvisoryBoard() {
               </h3>
             </div>
           ))}
-        </StaggerReveal>
+        </GsapReveal>
       </div>
     </section>
   );

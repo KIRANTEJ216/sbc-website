@@ -40,7 +40,9 @@ export default function Gallery() {
         let transform = "translateX(100%)";
         let opacity = 0;
         let zIndex = 0;
-        let transition = "none";
+        let transitionProperty = "none";
+        let transitionDuration = "0s";
+        let transitionTimingFunction = "ease";
         let transitionDelay = "0s";
         let animation = "none";
 
@@ -48,15 +50,20 @@ export default function Gallery() {
           transform = "translateX(0)";
           opacity = 1;
           zIndex = 2;
-          transition = "transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 1ms";
-          transitionDelay = "0.45s";
+          transitionProperty = "transform, opacity";
+          transitionDuration = "0.45s, 1ms";
+          transitionTimingFunction = "cubic-bezier(0.785, 0.135, 0.15, 0.86), ease";
+          transitionDelay = "0.45s, 0.45s";
         } else if (isLeaving) {
           animation = "slideHack 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86)";
           zIndex = 3;
           opacity = 1;
         } else if (hacked) {
           opacity = 1;
-          transition = "opacity 0.3s";
+          transitionProperty = "opacity";
+          transitionDuration = "0.3s";
+          transitionTimingFunction = "ease";
+          transitionDelay = "0s";
         }
 
         return (
@@ -67,7 +74,9 @@ export default function Gallery() {
               transform,
               opacity,
               zIndex,
-              transition,
+              transitionProperty,
+              transitionDuration,
+              transitionTimingFunction,
               transitionDelay,
               animation,
               pointerEvents: isActive ? "auto" : "none",
@@ -121,6 +130,7 @@ export default function Gallery() {
         </span>
         <button
           onClick={goNext}
+          aria-label="Next gallery image"
           className="px-8 py-3 bg-white/15 backdrop-blur-md rounded-full text-white font-heading tracking-widest text-xs border border-white/25 hover:bg-white/25 transition-all cursor-pointer"
         >
           NEXT

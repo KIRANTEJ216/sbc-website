@@ -4,9 +4,10 @@ import AboutUs from "@/components/AboutUs";
 import DigitalTeam from "@/components/DigitalTeam";
 import Gallery from "@/components/Gallery";
 import AdvisoryBoard from "@/components/AdvisoryBoard";
+import MemberLogin from "@/components/MemberLogin";
 import VisitorCounter from "@/components/VisitorCounter";
 
-const tabLabels = ["FOUNDER", "ABOUT", "TEAM", "GALLERY", "BOARD"];
+const tabLabels = ["FOUNDER", "ABOUT", "TEAM", "GALLERY", "BOARD", "LOGIN"];
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <DigitalTeam />
         <Gallery />
         <AdvisoryBoard />
+        <MemberLogin />
       </StickyNav>
       <VisitorCounter />
     </>

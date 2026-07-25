@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollReveal from "@/components/ScrollReveal";
+import GsapReveal from "@/components/GsapReveal";
 
 export default function FounderVision() {
   return (
@@ -11,7 +11,7 @@ export default function FounderVision() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-2 lg:sticky lg:top-28">
-            <ScrollReveal variant="left">
+            <GsapReveal variant="left">
               <div className="relative">
                 <div className="w-full aspect-[3/4] rounded-[1.5rem] overflow-hidden border border-border/50 shadow-card">
                   <img
@@ -23,11 +23,11 @@ export default function FounderVision() {
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-accent/20 blur-[40px]" />
                 <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full bg-gold/20 blur-[30px]" />
               </div>
-            </ScrollReveal>
+            </GsapReveal>
           </div>
 
           <div className="lg:col-span-3">
-            <ScrollReveal>
+            <GsapReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-surface/50 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
                 <span className="text-text-muted text-xs uppercase tracking-widest font-medium">Founder & Vision</span>
@@ -80,7 +80,7 @@ export default function FounderVision() {
                   <p className="text-text-muted text-xs">+91 94907 59634</p>
                 </div>
               </div>
-            </ScrollReveal>
+            </GsapReveal>
           </div>
         </div>
       </div>

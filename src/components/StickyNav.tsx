@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, ReactNode } from "react";
+import ConnectingDots from "@/components/ConnectingDots";
+import Logo from "@/components/Logo";
 
 interface StickyNavProps {
   children: ReactNode[];
@@ -48,7 +50,8 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      window.scrollTo({ top: el.offsetTop - TAB_HEIGHT, behavior: "smooth" });
+      const top = el.getBoundingClientRect().top + window.scrollY - TAB_HEIGHT;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
@@ -56,14 +59,17 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
 
   return (
     <div ref={containerRef}>
-      <section className="flex flex-col items-center justify-center h-screen relative text-center px-8" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%)" }}>
-        <div className="max-w-3xl">
+      <section className="flex flex-col items-center justify-center h-screen relative text-center px-4 sm:px-8 overflow-hidden" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%)" }}>
+        <ConnectingDots />
+        <div className="max-w-3xl relative z-[2]">
+          <Logo className="w-16 sm:w-20 lg:w-24 mx-auto mb-5 sm:mb-6" />
+
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/60 bg-white/60 backdrop-blur-sm mb-6">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-text-muted text-xs uppercase tracking-widest font-heading font-medium">Community Business Platform</span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-[0.15em] mb-4">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-[0.12em] sm:tracking-[0.15em] mb-4 break-words">
             SB CONNECT
           </h1>
 
@@ -77,7 +83,8 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
         </div>
 
         <div
-          className="flex w-full bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-10"
+          role="tablist"
+          className="flex w-full bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-10 overflow-x-auto scrollbar-hide"
           style={{
             position: isSticky ? "fixed" : "absolute",
             top: isSticky ? 0 : "auto",
@@ -87,21 +94,19 @@ export default function StickyNav({ children, tabLabels }: StickyNavProps) {
           }}
         >
           {tabLabels.map((label, i) => (
-            <a
+            <button
               key={i}
-              href={`#${tabIds[i]}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo(tabIds[i]);
-              }}
-              className={`flex-1 flex items-center justify-center text-sm font-heading font-semibold tracking-widest transition-all duration-500 cursor-pointer ${
+              role="tab"
+              aria-selected={activeIndex === i}
+              onClick={() => scrollTo(tabIds[i])}
+              className={`flex-1 shrink-0 flex items-center justify-center text-xs sm:text-sm font-heading font-semibold tracking-widest transition-all duration-500 cursor-pointer whitespace-nowrap px-3 sm:px-4 ${
                 activeIndex === i
                   ? "text-accent bg-accent/5"
                   : "text-text-secondary hover:bg-accent hover:text-white"
               }`}
             >
               {label}
-            </a>
+            </button>
           ))}
           <span
             className="absolute bottom-0 h-[6px] bg-accent transition-all duration-300 ease-out"

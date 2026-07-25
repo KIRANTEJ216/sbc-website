@@ -1,7 +1,6 @@
 "use client";
 
-import ScrollReveal from "@/components/ScrollReveal";
-import StaggerReveal from "@/components/StaggerReveal";
+import GsapReveal from "@/components/GsapReveal";
 
 const teamMembers = [
   { name: "ILLA SOMA SEKHAR", role: "President", seed: "core-1" },
@@ -21,7 +20,7 @@ export default function DigitalTeam() {
       <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <ScrollReveal>
+        <GsapReveal>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-surface/50 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -35,9 +34,9 @@ export default function DigitalTeam() {
               The governing body driving SB Connect forward
             </p>
           </div>
-        </ScrollReveal>
+        </GsapReveal>
 
-        <StaggerReveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <GsapReveal stagger={0.07} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {teamMembers.map((m) => (
             <div
               key={m.name}
@@ -68,7 +67,7 @@ export default function DigitalTeam() {
               </div>
             </div>
           ))}
-        </StaggerReveal>
+        </GsapReveal>
       </div>
     </section>
   );

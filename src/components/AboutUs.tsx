@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollReveal from "@/components/ScrollReveal";
+import GsapReveal from "@/components/GsapReveal";
 
 const totalMeetings = 16;
 
@@ -16,7 +16,7 @@ export default function AboutUs() {
     <div className="min-h-full bg-canvas">
       <section className="py-20 sm:py-28 px-6 border-b border-border/50">
         <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
+          <GsapReveal>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-surface/50 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="text-text-muted text-xs uppercase tracking-widest font-medium">About SB Connect</span>
@@ -29,27 +29,27 @@ export default function AboutUs() {
               SB Connect is a private community of verified business professionals committed to
               mutual growth through authentic connections, collaboration, and shared opportunities.
             </p>
-          </ScrollReveal>
+          </GsapReveal>
         </div>
       </section>
 
       <section className="py-20 sm:py-28 px-6 border-b border-border/50 overflow-hidden">
         <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
+          <GsapReveal>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-12 text-center">
               Our <span className="gradient-accent">Journey</span>
             </h2>
-          </ScrollReveal>
+          </GsapReveal>
 
-          <ScrollReveal>
-            <div className="py-8">
+          <GsapReveal>
+            <div className="py-4 sm:py-8">
               <div className="relative">
                 <div className="h-px bg-border/60 absolute left-0 right-0 top-1/2 -translate-y-1/2" />
-                <div className="flex items-center justify-between relative">
+                <div className="flex items-center justify-between relative overflow-visible pb-8 sm:pb-6">
                   {Array.from({ length: totalMeetings }, (_, i) => (
-                    <div key={i} className="flex flex-col items-center">
+                    <div key={i} className="flex flex-col items-center relative">
                       <div
-                        className={`w-3 h-3 rounded-full z-10 transition-all duration-300 ${
+                        className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full z-10 transition-all duration-300 shrink-0 ${
                           i < 5
                             ? "bg-accent/30"
                             : i < 10
@@ -60,7 +60,7 @@ export default function AboutUs() {
                           }`}
                       />
                       {(i === 0 || i === 6 || i === 11 || i === 15) && (
-                        <span className="text-[10px] text-text-muted font-heading mt-2 whitespace-nowrap absolute top-full">
+                        <span className="text-[9px] sm:text-[10px] text-text-muted font-heading whitespace-nowrap absolute top-full mt-2 sm:mt-2.5">
                           {i === 0 ? "Jan '25" : i === 6 ? "Aug '25" : i === 11 ? "Jan '26" : "Today"}
                         </span>
                       )}
@@ -69,40 +69,40 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mt-10 text-center">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 mt-12 sm:mt-10 text-center">
                 <div>
-                  <p className="text-xs font-heading font-bold text-accent">First Meeting</p>
-                  <p className="text-xs text-text-muted mt-0.5">Jan 2025 — 10 members</p>
+                  <p className="text-[11px] sm:text-xs font-heading font-bold text-accent">First Meeting</p>
+                  <p className="text-[10px] sm:text-xs text-text-muted mt-0.5">Jan 2025 — 10 members</p>
                 </div>
                 <div>
-                  <p className="text-xs font-heading font-bold text-accent">Inauguration</p>
-                  <p className="text-xs text-text-muted mt-0.5">Oct 2025 — 60 members</p>
+                  <p className="text-[11px] sm:text-xs font-heading font-bold text-accent">Inauguration</p>
+                  <p className="text-[10px] sm:text-xs text-text-muted mt-0.5">Oct 2025 — 60 members</p>
                 </div>
                 <div>
-                  <p className="text-xs font-heading font-bold text-accent">16th Meeting</p>
-                  <p className="text-xs text-text-muted mt-0.5">127+ members and growing</p>
+                  <p className="text-[11px] sm:text-xs font-heading font-bold text-accent">16th Meeting</p>
+                  <p className="text-[10px] sm:text-xs text-text-muted mt-0.5">127+ members and growing</p>
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+          </GsapReveal>
         </div>
       </section>
 
       <section className="py-20 sm:py-28 px-6 border-b border-border/50">
         <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
+          <GsapReveal>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-12 text-center">
               By the <span className="gradient-text">Numbers</span>
             </h2>
-          </ScrollReveal>
+          </GsapReveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {stats.map((s) => (
-              <ScrollReveal key={s.label}>
+              <GsapReveal key={s.label}>
                 <div className="glass rounded-[1rem] p-6 text-center border border-border/60 stat-accent-line">
                   <p className="text-2xl sm:text-3xl font-heading font-bold gradient-accent">{s.value}</p>
                   <p className="text-text-muted text-xs sm:text-sm mt-1">{s.label}</p>
                 </div>
-              </ScrollReveal>
+              </GsapReveal>
             ))}
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function AboutUs() {
 
       <section className="py-20 sm:py-28 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <ScrollReveal>
+          <GsapReveal>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-6">
               What We <span className="gradient-gold">Stand For</span>
             </h2>
@@ -130,7 +130,7 @@ export default function AboutUs() {
                 </div>
               ))}
             </div>
-          </ScrollReveal>
+          </GsapReveal>
         </div>
       </section>
     </div>
