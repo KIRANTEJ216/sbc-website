@@ -486,9 +486,3 @@ body {
 .section-muted {
   background: var(--color-secondary);
 }
-
-/* Performance: skip off-screen content rendering */
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 400px;
-}
